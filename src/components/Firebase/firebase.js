@@ -7,15 +7,25 @@
 import app from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/database';
+import dotenv from 'dotenv';//API Key Validation
+dotenv.config();
 /**configuration from your Firebase project’s dashboard 
-on firebase website*/
+    on firebase website*/
   const config = {
-    apiKey: "AIzaSyA4G_6jDii2WLvN0IC2OszyKYhLHdK-sTs",
-    authDomain: "cs353-group-project-3b696.firebaseapp.com",
-    databaseURL: "https://cs353-group-project-3b696.firebaseio.com",
-    projectId: "cs353-group-project-3b696",
-    storageBucket: "cs353-group-project-3b696.appspot.com",
-    messagingSenderId: "494091671530"
+
+
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  databaseURL: process.env.REACT_APP_DATABASE_URL,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+    //apiKey: "AIzaSyA4G_6jDii2WLvN0IC2OszyKYhLHdK-sTs",
+    //authDomain: "cs353-group-project-3b696.firebaseapp.com",
+    //databaseURL: "https://cs353-group-project-3b696.firebaseio.com",
+    //projectId: "cs353-group-project-3b696",
+    //storageBucket: "cs353-group-project-3b696.appspot.com",
+    //messagingSenderId: "494091671530"
   };
 
   class Firebase {

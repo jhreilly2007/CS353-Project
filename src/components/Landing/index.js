@@ -13,7 +13,7 @@ import React, { Component } from 'react';
 const API = 'https://itunes.apple.com/search?term=fun';
 //const DEFAULT_QUERY = 'redux';
 
-class Lannding extends Component {
+class Landing extends Component {
     /**First create a constructor function to pass in the props*/
     constructor(props){
         super(props);
