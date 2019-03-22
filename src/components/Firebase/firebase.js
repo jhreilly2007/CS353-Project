@@ -10,12 +10,12 @@ import 'firebase/database';
 /**configuration from your Firebase project’s dashboard 
 on firebase website*/
   const config = {
-    apiKey: "AIzaSyCsh71n9W66ThYOjcFPkfBC0yrClyD4W9g",
-    authDomain: "podcast-app-a50a5.firebaseapp.com",
-    databaseURL: "https://podcast-app-a50a5.firebaseio.com",
-    projectId: "podcast-app-a50a5",
-    storageBucket: "podcast-app-a50a5.appspot.com",
-    messagingSenderId: "594290863646"
+    apiKey: "AIzaSyA4G_6jDii2WLvN0IC2OszyKYhLHdK-sTs",
+    authDomain: "cs353-group-project-3b696.firebaseapp.com",
+    databaseURL: "https://cs353-group-project-3b696.firebaseio.com",
+    projectId: "cs353-group-project-3b696",
+    storageBucket: "cs353-group-project-3b696.appspot.com",
+    messagingSenderId: "494091671530"
   };
 
   class Firebase {

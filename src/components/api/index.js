@@ -1,16 +1,6 @@
-/**import React from 'react';
-
-const Landing = () => (
-  <div>
-    <h1>Landing</h1>
-   </div>
-);
-
-export default Landing;*/
-
 import React, { Component } from 'react';
 
-class Landing extends Component {
+class api extends Component {
 
     /**First create a constructor function to pass in the props*/
     constructor(props){
@@ -56,7 +46,7 @@ class Landing extends Component {
     key attribuate is used by react to know which items have been modified
     We want to say output a name & email this is specified in json file accessing it with dot operator*/
     return (
-      <div className="Landing">
+      <div className="api">
 
               <ul>
                   {items.map(item =>(
@@ -72,5 +62,5 @@ class Landing extends Component {
   }
 }
 
-export default Landing;
+export default api;
 

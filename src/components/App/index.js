@@ -1,4 +1,4 @@
-/**he App component is a function component... it uses the higher-order 
+/**The App component is a function component... it uses the higher-order 
 component to make the authenticated user available for all other components 
 below of the App component:
 It implements a  Navigation component that will be used 
@@ -47,8 +47,11 @@ const App = () => (
       <Route path={ROUTES.HOME} component={HomePage} />
       <Route path={ROUTES.ACCOUNT} component={AccountPage} />
       <Route path={ROUTES.ADMIN} component={AdminPage} />
-    </div>
+      </div>
   </Router>
 );
 
 export default withAuthentication(App);
+
+
+
