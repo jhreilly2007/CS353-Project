@@ -3,14 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "antd": "^3.15.2",
     "dotenv": "^7.0.0",
     "firebase": "^5.8.5",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
     "react-login-signup-form": "^1.0.7",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "2.1.5",
-    "recompose": "^0.30.0"
+    "react-scripts": "^2.1.8",
+    "recompose": "^0.30.0",
+    "youtube-api-search": "^0.0.5",
+    "youtube-api-v3-search": "^1.2.1",
+    "ytsearch": "^1.0.4"
   },
   "scripts": {
     "start": "react-scripts start",
