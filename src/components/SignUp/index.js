@@ -81,8 +81,37 @@ class SignUpFormBase extends Component {
       email === '' ||
       username === '';
 
+    
+
+
+
     return (
-      <form onSubmit={this.onSubmit}>
+
+<form className="form-signup" onSubmit={this.onSubmit}>
+      <h2 className="form-signup-heading">Please Sign Up</h2>
+
+        
+          <input type="text" className="form-control" placeholder="Username" required
+                           autoFocus onChange={this.onChange}/>
+
+        <input type="text" className="form-control" placeholder="Email address" required
+                           autoFocus onChange={this.onChange}/>
+
+        <input type="password" className="form-control" placeholder="Password" required
+                           onChange={this.onChange}/>
+       <input type="password" className="form-control" placeholder="Confirm Password" required
+                           onChange={this.onChange}/>
+
+
+        <button disabled={isInvalid} className="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
+    
+
+        {error && <p>{error.message}</p>}
+      </form>
+
+
+
+      /*<form onSubmit={this.onSubmit}>
               <input
           name="username"
           value={username}
@@ -115,7 +144,7 @@ class SignUpFormBase extends Component {
 
         {error && <p>{error.message}</p>}
 
-      </form>
+      </form> */
     );
   }
 }
