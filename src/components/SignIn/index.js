@@ -12,19 +12,27 @@ in page.*/
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { compose } from 'recompose';
-
 import { PasswordForgetLink } from '../PasswordForget';
 import { SignUpLink } from '../SignUp';
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
+import './Signin.css';
+
+
+
+
 
 const SignInPage = () => (
+<body>
   <div>
-    <h1>SignIn</h1>
     <SignInForm />
+   
     <SignUpLink />
-    <PasswordForgetLink />
+    <PasswordForgetLink/>
+  
   </div>
+</body>
+
 );
 
 const INITIAL_STATE = {
@@ -60,11 +68,45 @@ class SignInFormBase extends Component {
     this.setState({ [event.target.name]: event.target.value });
   };
 
+
+
   render() {
     const { email, password, error } = this.state;
 
     const isInvalid = password === '' || email === '';
 
+    return (
+
+    
+    
+      <form className="form-signup" onSubmit={this.onSubmit}>
+      <h2 className="form-signup-heading">Please Sign In</h2>
+
+        <input type="text" className="form-control" placeholder="Email address" required
+                           autoFocus onChange={this.onChange}/>
+
+        <input type="password" className="form-control" placeholder="Password" required
+                           onChange={this.onChange}/>
+
+
+        <button disabled={isInvalid} className="btn btn-lg btn-primary btn-block" type="submit">Sign In</button>
+    
+
+        {error && <p>{error.message}</p>}
+      </form>
+
+     
+    
+    );
+  }
+
+  /*
+  render() {
+    const { email, password, error } = this.state;
+
+    const isInvalid = password === '' || email === '';
+
+   
     return (
       <form onSubmit={this.onSubmit}>
         <input
@@ -87,9 +129,11 @@ class SignInFormBase extends Component {
 
         {error && <p>{error.message}</p>}
       </form>
-    );
-  }
+    ); 
+
+  } */
 }
+
 
 const SignInForm = compose(
   withRouter,
@@ -99,3 +143,4 @@ const SignInForm = compose(
 export default SignInPage;
 
 export { SignInForm };
+
