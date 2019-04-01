@@ -25,8 +25,8 @@ import './Signin.css';
 const SignInPage = () => (
 <body>
   <div>
-    <SignInForm />
    
+    <SignInForm />
     <SignUpLink />
     <PasswordForgetLink/>
   
@@ -70,7 +70,7 @@ class SignInFormBase extends Component {
 
 
 
-  render() {
+  /** render() {*****Old code to be deleted
     const { email, password, error } = this.state;
 
     const isInvalid = password === '' || email === '';
@@ -78,9 +78,9 @@ class SignInFormBase extends Component {
     return (
 
     
-    
-      <form className="form-signup" onSubmit={this.onSubmit}>
-      <h2 className="form-signup-heading">Please Sign In</h2>
+  
+      <form class="form-signup" onSubmit={this.onSubmit}>
+      <h2 class="form-signup-heading">Please Sign In</h2>
 
         <input type="text" className="form-control" placeholder="Email address" required
                            autoFocus onChange={this.onChange}/>
@@ -89,7 +89,7 @@ class SignInFormBase extends Component {
                            onChange={this.onChange}/>
 
 
-        <button disabled={isInvalid} className="btn btn-lg btn-primary btn-block" type="submit">Sign In</button>
+        <button className="btn btn-lg btn-primary btn-block" type="submit">Sign In</button>
     
 
         {error && <p>{error.message}</p>}
@@ -98,9 +98,9 @@ class SignInFormBase extends Component {
      
     
     );
-  }
+  }*/
 
-  /*
+
   render() {
     const { email, password, error } = this.state;
 
@@ -108,22 +108,22 @@ class SignInFormBase extends Component {
 
    
     return (
-      <form onSubmit={this.onSubmit}>
-        <input
+      <form class="form-signup" onSubmit={this.onSubmit}>
+        <input className="form-control"
           name="email"
           value={email}
           onChange={this.onChange}
           type="text"
           placeholder="Email Address"
         />
-        <input
+        <input className="form-control"
           name="password"
           value={password}
           onChange={this.onChange}
           type="password"
           placeholder="Password"
         />
-        <button disabled={isInvalid} type="submit">
+        <button className="btn btn-lg btn-primary btn-block" type="submit">
           Sign In
         </button>
 
@@ -131,7 +131,7 @@ class SignInFormBase extends Component {
       </form>
     ); 
 
-  } */
+  } 
 }
 
 

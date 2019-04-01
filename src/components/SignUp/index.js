@@ -21,12 +21,14 @@ import { compose } from 'recompose';
 
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
+import './SignUp.css';
 
 const SignUpPage = () => (
+  <body>
   <div>
-    <h1>SignUp</h1>
-    <SignUpForm />
+     <SignUpForm />
   </div>
+  </body>
 );
 
 const INITIAL_STATE = {
@@ -86,7 +88,7 @@ class SignUpFormBase extends Component {
 
 
     return (
-
+/** *****Old code to be deleted
 <form className="form-signup" onSubmit={this.onSubmit}>
       <h2 className="form-signup-heading">Please Sign Up</h2>
 
@@ -103,48 +105,49 @@ class SignUpFormBase extends Component {
                            onChange={this.onChange}/>
 
 
-        <button disabled={isInvalid} className="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
+        <button className="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
     
 
         {error && <p>{error.message}</p>}
       </form>
 
+*/
 
-
-      /*<form onSubmit={this.onSubmit}>
-              <input
+      <form className="form-signup" onSubmit={this.onSubmit}>
+              <input className="form-control" 
           name="username"
           value={username}
           onChange={this.onChange}
           type="text"
           placeholder="Full Name"
         />
-        <input
+        <input className="form-control" 
           name="email"
           value={email}
           onChange={this.onChange}
           type="text"
           placeholder="Email Address"
         />
-        <input
+        <input className="form-control" 
           name="passwordOne"
           value={passwordOne}
           onChange={this.onChange}
           type="password"
           placeholder="Password"
         />
-        <input
+        <input className="form-control" 
           name="passwordTwo"
           value={passwordTwo}
           onChange={this.onChange}
           type="password"
           placeholder="Confirm Password"
         />
-        <button disabled={isInvalid} type="submit">Sign Up</button>
+        <button className="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
 
         {error && <p>{error.message}</p>}
 
-      </form> */
+      </form> 
+      
     );
   }
 }
