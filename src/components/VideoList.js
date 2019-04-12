@@ -1,44 +1,18 @@
+/** VideoList Component is a functional component. It eill get list from the Landing 
+Component. VideoList Component is the parent of VideoItem Component*/
 
-import React, { Component } from 'react';
-import VideoListItem from './VideoListItem';
-import { List } from 'antd';//List component from antd
+import React from 'react';
+import VideoItem from './VideoItem';
+import 'semantic-ui-css/semantic.min.css';
 
-class VideoList extends Component {
-    state = {
-        data: []
-    };
-/**Here, there are two states of our video list, one when the List is empty 
-and other when the list is filled with video suggestions.*/
-    render() {
-        if( this.props.videos.length === 0 ) {
-          return (
-              <List
-                  style={{ "width": "40%"}}
-                  size={"large"}
-                  header={<div>Podcast Suggestions</div>}
-                  bordered
-                  dataSource={ this.state.data }
-                  renderItem={item => (<List.Item>{item}</List.Item>)}
-              />
-          )
-        }
+const VideoList = ({videos, handleVideoSelect}) =>{
 
-        const videoItems = this.props.videos.map((video, index) => {
-            return (
-                <VideoListItem
-                    key={ index }
-                    video={video}
-                    onUserSelected={ this.props.onVideoSelect.bind( this, [ index ]) }
-                />
-            )
-        });
-
-        return (
-            <ul style={{ "listStyle":"none" ,"width":"40%", "padding": "5px", "border": "1px solid #efefef", "marginBottom": "3px", "borderRadius": "5px" }}>
-                { videoItems }
-            </ul>
-        );
-    }
-}
+	const renderedVideos = videos.map((video) =>{
+		return <VideoItem key ={video.id.videoId} video ={video} handleVideoSelect={handleVideoSelect}/>
+		//this destructures out props object that we pass from parent object, then mapping over the
+		//video list which returns new array and finally we return VideoItem with some properties
+	});
+	return <div className ='ui relaxed dividend list'>{renderedVideos}</div>;
+};
 
 export default VideoList;

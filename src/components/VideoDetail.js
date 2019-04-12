@@ -1,50 +1,25 @@
+import React from 'react';
+import 'semantic-ui-css/semantic.min.css';
 
-import React, { Component } from 'react';
-import { Icon } from "antd";
-
-class VideoDetail extends Component {
-    state = {
-        video: null
-    };
-
-    componentDidUpdate(prevProps) {
-        if( this.props.video && ( prevProps.video !== this.props.video)  ) {
-            this.setState({ video: this.props.video })
-        }
+const VideoDetail = ({video}) => {
+    if (!video) {
+        return <div>Loading ...</div>;
     }
 
-    render() {
-        const video = this.state.video;
-
-        if( !video ) {
-            return (
-                <div style={{ "width": "67.5%", "background": "#999999", "color": "#fff", "height": "85vh", "postion": "relative" }}>
-                    <h1 style={{ "top":"50%", "left": "28%", "position": "absolute" }}><Icon type={"youtube"}/></h1>
-                </div>
-            )
-        }
-
-        const videoId = video.id.videoId;
-        const url = `https://www.youtube.com/embed/${ videoId }`;
-
-        return (
-            <div>
-                <div className={"embed-responsive embed-responsive-16by9"}>
-         /**Here, we have simply used an iframe for playing the youtube video. And used a couple of classes 
-         from bootstrap to make it responsive. */          
-                    <iframe title={ video.snippet.title } className={"embed-responsive-item"} src={url} allowFullScreen />
-                </div>
-                <div>
-                    <h2>
-                        { video.snippet.title }
-                    </h2>
-                    <div>
-                        { video.snippet.description }
-                    </div>
-                </div>
+    const videoSrc = `https://www.youtube.com/embed/${video.id.videoId}`;
+    console.log(typeof(video));
+    return (
+        <div>
+            <div className='ui embed'>
+                <iframe src={videoSrc} allowFullScreen title='Video player'/>
             </div>
-        )
-    }
+            <div className='ui segment'>
+                <h4 className='ui header'>{video.snippet.title}</h4>
+                <p>{video.snippet.description}</p>
+            </div>
+        </div>
+
+    )
 }
 
 export default VideoDetail;

@@ -1,44 +1,46 @@
-import React, { Component } from 'react';
-import  { AutoComplete, Button, Icon } from 'antd';
-const Option = AutoComplete.Option;//AutoComplete component from antd
-class SearchBar extends Component {
+import React from 'react';
+import 'semantic-ui-css/semantic.min.css';
+
+
+class Searchbar extends React.Component{
+/**create a state object and two callback(handleChange and handleSubmit)
+  term=input to search what we are looking for */
 
     state = {
-      videos: []
+        term:'Enter Search'
     };
 
-    /**filling this autocomplete component with 5 videos which are coming from 
-    API on the basis of the search term*/
+    /**this.set state change set state*/    
+    handleChange = (event) =>{
+        this.setState({
+            term: event.target.value
+        });
+    };
 
-    componentDidUpdate( prevProps ) {
-      if( this.props.video && prevProps.video !== this.props.video ) {
-          this.setState({ videos: this.props.videos })
-      }
+/**we take the term from serachbar compoent and assign to q to that 
+we need to pass handleSubmit as a prop to SearchBar Component
+(ie handleFormSubmit = this.handleSubmit)
+event.preventDefault() prevents default actin on submit*/
+
+    handleSubmit =  event =>{
+        event.preventDefault();
+        this.props.handleFormSubmit(this.state.term);
     }
 
-    onSelect = (value, index ) => {
-        let val = parseInt(index.key, 10);
-        this.props.handleSearch( val );
-    };
-  /** we are ready with a search bar with autocompletion feature*/
+        /**On submit event handler to show result of search
+            onchange event handler in order to mutate keyword*/
     render() {
-        return(
-            <div style={{ "textAlign": "center", "background": "#123456", "padding": "35px" }}>
-                   <AutoComplete
-                    size={"large"}
-                    style={{ width: 400 }}
-                    onSelect={ this.onSelect }
-                    onChange={ this.props.onChange }
-                    placeholder="Search Podcasts"
-                >
-                    { this.state.videos.map((video, index)  => <Option key={ index } >{ video.snippet.title }</Option> ) }
-                </AutoComplete>
-                <Button style={{ "marginLeft":"5px" }} size={"large"}><Icon type={"search"}/></Button>
+        return (
+            <div className='search-bar ui segment'>
+                <form onSubmit={this.handleSubmit} className='ui form'>
+                    <div className='field'>
+                        <label htmlFor="video-search">Video Search &#128269;</label>
+                        <input onChange={this.handleChange} name='video-search' type="text" value={this.state.term}/>
+                    </div>
+                </form>
             </div>
-        );
+        )
     }
 }
+export default Searchbar;
 
-
-
-export default SearchBar;

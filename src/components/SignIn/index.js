@@ -23,7 +23,7 @@ import './Signin.css';
 
 
 const SignInPage = () => (
-<body>
+
   <div>
    
     <SignInForm />
@@ -31,7 +31,7 @@ const SignInPage = () => (
     <PasswordForgetLink/>
   
   </div>
-</body>
+
 
 );
 

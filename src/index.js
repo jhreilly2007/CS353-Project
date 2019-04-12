@@ -4,6 +4,8 @@ import './index.css';
 import App from './components/App';
 import * as serviceWorker from './serviceWorker';
 
+
+
 /**provide a Firebase instance to your entire application
 Doing it this way, we can be assured that Firebase is only 
 instantiated once and that it is injected via React’s Context 
