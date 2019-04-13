@@ -1,4 +1,4 @@
-/**This is the overseer for the session state. Logic regarding the current authenticated 
+  /**This is the overseer for the session state. Logic regarding the current authenticated 
   user needs to be stored and made accessible to other components. The App component only 
   needs to keep track of an authenticated user (session). If a user is authenticated, store 
   it in the local state and pass the authenticated user object down to all components that 
@@ -25,11 +25,17 @@ const withAuthentication = Component => {
     }
 
     componentDidMount() {
-      this.listener = this.props.firebase.auth.onAuthStateChanged(
+    /**when user changes the function within the listener is called*/
+      this.listener = this.props.firebase.onAuthUserListener(
+    /**if user is not null we gret user with help of the authenticated users UID then
+    merge everything from the database user with the unique ID and email from auth user
+    If conditions are met user can stay on component enhanced by the authorization 
+    higher-order component*/
         authUser => {
-          authUser
-            ? this.setState({ authUser })
-            : this.setState({ authUser: null });
+          this.setState({ authUser });
+        },
+        () => {
+          this.setState({ authUser: null });
         },
       );
     }

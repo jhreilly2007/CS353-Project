@@ -21,13 +21,25 @@ const withAuthorization = condition => Component => {
   	user changes. The authenticated user is either a authUser object or null. Within this 
   	function, the passed condition() function is executed with the authUser*/
   	
+/**Merging authenicated user with databaseuser
+Since we need to check the roles only in the authorization higher-order component, it’s 
+best to merge the authentication user and database user in this component before checking for 
+its privileges (roles, permissions).*/
+
+
     componentDidMount() {
-      this.listener = this.props.firebase.auth.onAuthStateChanged(
+      /**when user changes the function within the listener is called*/
+      this.listener = this.props.firebase.onAuthUserListener(
+        /**if user is not null we gret user with help of the authenticated users UID then
+        merge everything from the database user with the unique ID and email from auth user
+        If conditions are met user can stay on component enhanced by the authorization 
+        higher-order component*/
         authUser => {
           if (!condition(authUser)) {
             this.props.history.push(ROUTES.SIGN_IN);
           }
         },
+        () => this.props.history.push(ROUTES.SIGN_IN),
       );
     }
 
