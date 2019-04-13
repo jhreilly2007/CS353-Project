@@ -33,6 +33,7 @@ dotenv.config();
     app.initializeApp(config);
 
     this.auth = app.auth();
+    this.db = app.database();
   }
   /**define all the authentication functions as class methods
   These will serve our communication from the Firebase 
@@ -61,6 +62,12 @@ dotenv.config();
 
    doPasswordUpdate = password =>
     this.auth.currentUser.updatePassword(password);
+
+      // *** User API ***
+
+  user = uid => this.db.ref(`users/${uid}`);
+
+  users = () => this.db.ref('users');
 }
 
 export default Firebase;

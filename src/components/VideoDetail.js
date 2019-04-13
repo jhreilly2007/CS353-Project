@@ -3,7 +3,11 @@ import 'semantic-ui-css/semantic.min.css';
 
 const VideoDetail = ({video}) => {
     if (!video) {
-        return <div>Loading ...</div>;
+        return <div className='ui embed'>
+        <a id="play-video" href="#"></a><br />
+        <iframe id="video" src="//www.youtube.com/embed/7lCDEYXw3mM?rel=0" 
+        allowFullScreen title='Placeholder'></iframe></div>;
+            
     }
 
     const videoSrc = `https://www.youtube.com/embed/${video.id.videoId}`;
