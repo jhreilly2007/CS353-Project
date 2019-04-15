@@ -2,7 +2,7 @@
 because it holds all of the other states*/
 
 import React from 'react';
-import SearchBar from '../Searchbar';
+import SearchBar from '../SearchBar';
 import youtube from '../../apis/youtube';
 import VideoList from '../VideoList';
 import VideoDetail from '../VideoDetail';

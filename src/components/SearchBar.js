@@ -2,7 +2,7 @@ import React from 'react';
 import 'semantic-ui-css/semantic.min.css';
 
 
-class Searchbar extends React.Component{
+class SearchBar extends React.Component{
 /**create a state object and two callback(handleChange and handleSubmit)
   term=input to search what we are looking for */
 
@@ -42,5 +42,5 @@ event.preventDefault() prevents default actin on submit*/
         )
     }
 }
-export default Searchbar;
+export default SearchBar;
 
