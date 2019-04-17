@@ -25,11 +25,11 @@ import './SignUp.css';
 import * as ROLES from '../../constants/roles';
 
 const SignUpPage = () => (
-  <body>
+  
   <div>
      <SignUpForm />
   </div>
-  </body>
+  
 );
 
 const INITIAL_STATE = {
