@@ -32,9 +32,9 @@ const Navigation = () => (
 
 const NavigationAuth = ({ authUser }) => (
   <ul>
-    <li><a>
+    <li>
       <Link to={ROUTES.LANDING}>Landing</Link>
-    </a></li>
+    </li>
     <li>
       <Link to={ROUTES.HOME}>Home</Link>
     </li>
@@ -51,7 +51,7 @@ const NavigationAuth = ({ authUser }) => (
       </li>
     )}
     <li>
-      <SignOutButton />
+      <SignOutButton  to ='../SignOut'>Sign Out</SignOutButton>
     </li>
   </ul>
 );

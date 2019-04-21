@@ -66,6 +66,7 @@ const Profile = () => (
             <div>
                 <h2>Username: {authUser.username}</h2>
               <PasswordForgetForm />
+              <br/>
               <PasswordChangeForm />
             </div>
             )}
