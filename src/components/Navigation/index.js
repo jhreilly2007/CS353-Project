@@ -16,6 +16,7 @@ import * as ROUTES from '../../constants/routes';
 /**the Navigation component uses the new context to consume the authenticated user*/
 import { AuthUserContext } from '../Session';
 import * as ROLES from '../../constants/roles';
+import './navigation.css';
 
 const Navigation = () => (
   <AuthUserContext.Consumer>
@@ -31,14 +32,17 @@ const Navigation = () => (
 
 const NavigationAuth = ({ authUser }) => (
   <ul>
-    <li>
+    <li><a>
       <Link to={ROUTES.LANDING}>Landing</Link>
-    </li>
+    </a></li>
     <li>
       <Link to={ROUTES.HOME}>Home</Link>
     </li>
     <li>
       <Link to={ROUTES.ACCOUNT}>Account</Link>
+    </li>
+     <li>
+      <Link to={ROUTES.PROFILE_PAGE}>Profile</Link>
     </li>
   
     {!!authUser.roles[ROLES.ADMIN] && (
