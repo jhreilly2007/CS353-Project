@@ -21,6 +21,7 @@ import { compose } from 'recompose';
 
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
+
 import './SignUp.css';
 import * as ROLES from '../../constants/roles';
 
@@ -33,6 +34,9 @@ const SignUpPage = () => (
 );
 
 const INITIAL_STATE = {
+  firstname:'',
+  lastname: '',
+  bio: '',
   username: '',
   email: '',
   passwordOne: '',
@@ -49,7 +53,7 @@ class SignUpFormBase extends Component {
   }
 
   onSubmit = event => {
-    const { username, email, passwordOne, isAdmin } = this.state;
+    const { firstname, lastname, bio, username, email, passwordOne, isAdmin } = this.state;
     const roles = {};
 
         if (isAdmin) {
@@ -66,6 +70,9 @@ class SignUpFormBase extends Component {
         return this.props.firebase
           .user(authUser.user.uid)
           .set({
+            firstname,
+            lastname,
+            bio,
             username,
             email,
             roles,
@@ -93,6 +100,9 @@ class SignUpFormBase extends Component {
 
   render() {
     const {
+      firstname,
+      lastname,
+      bio,
       username,
       email,
       passwordOne,
@@ -113,38 +123,38 @@ class SignUpFormBase extends Component {
 
 
     return (
-/** *****Old code to be deleted
-<form className="form-signup" onSubmit={this.onSubmit}>
-      <h2 className="form-signup-heading">Please Sign Up</h2>
 
-        
-          <input type="text" className="form-control" placeholder="Username" required
-                           autoFocus onChange={this.onChange}/>
-
-        <input type="text" className="form-control" placeholder="Email address" required
-                           autoFocus onChange={this.onChange}/>
-
-        <input type="password" className="form-control" placeholder="Password" required
-                           onChange={this.onChange}/>
-       <input type="password" className="form-control" placeholder="Confirm Password" required
-                           onChange={this.onChange}/>
-
-
-        <button className="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
-    
-
-        {error && <p>{error.message}</p>}
-      </form>
-
-*/
 
       <form className="form-signup" onSubmit={this.onSubmit}>
-              <input className="form-control" 
+
+
+      <input className="form-control" 
+          name="firstname"
+          value={firstname}
+          onChange={this.onChange}
+          type="text"
+          placeholder="Fist Name"
+        />
+        <input className="form-control" 
+          name="lastname"
+          value={lastname}
+          onChange={this.onChange}
+          type="text"
+          placeholder=" Last Name"
+        />
+        <input className="form-control" 
+          name="bio"
+          value={bio}
+          onChange={this.onChange}
+          type="text"
+          placeholder="Biography: A brief description"
+        />
+        <input className="form-control" 
           name="username"
           value={username}
           onChange={this.onChange}
           type="text"
-          placeholder="Full Name"
+          placeholder="Surname"
         />
         <input className="form-control" 
           name="email"
@@ -187,9 +197,11 @@ class SignUpFormBase extends Component {
 }
 
 const SignUpLink = () => (
+ 
   <p>
     Don't have an account? <Link to={ROUTES.SIGN_UP}>Sign Up</Link>
   </p>
+
 );
 
 const SignUpForm = compose(
