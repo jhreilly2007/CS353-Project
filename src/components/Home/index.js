@@ -71,45 +71,63 @@ class MessagesBase extends Component {
     const { messages, loading } = this.state;
 
     return (
-      <div>
-        {loading && <div>Loading Favourites...</div>}
+      <AuthUserContext.Consumer>
+        {authUser => (
+          <div>
+            {loading && <div>Loading Favourites...</div>}
       
-      {messages ? (
-        <MessageList 
-         messages={messages}
-          onRemoveMessage={this.onRemoveMessage}
+              {messages ? (
+                <MessageList 
+                  authUser={authUser}
+                  messages={messages}
+                  onRemoveMessage={this.onRemoveMessage}
                 />
          ) : (
-          <div>There are no Favourites Saved ...</div>
+          
+            <div>There are no Favourites Saved ...</div>
         )}
 
-      </div>
+         </div>
+      )}
+    </AuthUserContext.Consumer>
     );
   }
 }
-const MessageList = ({ messages, onRemoveMessage }) => (
+const MessageList = ({  
+  authUser,
+  messages, 
+  onRemoveMessage 
+}) => (
   <ul>
     {messages.map(message => (
       <MessageItem 
-      key={message.uid} 
-      message={message} 
-      onRemoveMessage={onRemoveMessage}
+        authUser={authUser}
+        key={message.uid} 
+        message={message} 
+        onRemoveMessage={onRemoveMessage}
       />
     ))}
   </ul>
 );
 
-const MessageItem = ({ 
+const MessageItem = ({
+  authUser, 
   message, 
   onRemoveMessage 
 }) => (
   <li>
-        <iframe id="video" src={message.text} 
-        allowFullScreen title='Placeholder'></iframe>;
-   
-      <button type="button"onClick={() => onRemoveMessage(message.uid)}>
-          Delete
-        </button>
+
+    {authUser.uid === message.userId && (
+      <span>
+            <iframe id="video" src={message.text} 
+            allowFullScreen title='Placeholder'>
+              </iframe>;
+       
+          <button type="button"onClick={() => 
+            onRemoveMessage(message.uid)}>Delete
+              </button>
+        </span>
+        )}
 
   </li>
 

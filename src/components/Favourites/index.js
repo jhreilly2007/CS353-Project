@@ -77,6 +77,9 @@ class MessagesBase extends Component {
           />
           <button type="submit">Send</button>
         </form>
+    <p> This is a temporary set up until we can figure how to click on video
+          to save to firebase automatically.<br /> For now user needs to copy and 
+          paste link from the bottom of Landing page..not ideal!! :( </p>
       </div>
       )}
       </AuthUserContext.Consumer>
