@@ -1,3 +1,4 @@
+    
 /**	The application needs multiple. For instance, 
 	a user should be able to visit a public landing page, and 
 	also use sign up and sign in pages to enter the application 
@@ -15,3 +16,4 @@ export const ACCOUNT = '/account';
 export const ADMIN = '/admin';
 export const PASSWORD_FORGET = '/pw-forget';
 export const PROFILE_PAGE = '/profile';
+export const FAVOURITES_PAGE = '/favourites';

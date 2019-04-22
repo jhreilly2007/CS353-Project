@@ -27,6 +27,7 @@ import HomePage from '../Home';
 import AccountPage from '../Account';
 import AdminPage from '../Admin';
 import ProfilePage from '../Profile';
+import FavouritesPage from '../Favourites';
 
 import * as ROUTES from '../../constants/routes';
 import { withAuthentication } from '../Session';
@@ -46,6 +47,7 @@ const App = () => (
       <Route path={ROUTES.ACCOUNT} component={AccountPage} />
       <Route path={ROUTES.ADMIN} component={AdminPage} />
       <Route path={ROUTES.PROFILE_PAGE} component={ProfilePage} />
+      <Route path={ROUTES.FAVOURITES_PAGE} component={FavouritesPage} />
       </div>
   </Router>
 );

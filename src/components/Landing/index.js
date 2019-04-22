@@ -1,3 +1,4 @@
+    
 /**This Landing Component is created as a class-based component
 because it holds all of the other states*/
 
@@ -6,14 +7,16 @@ import SearchBar from '../SearchBar';
 import youtube from '../../apis/youtube';
 import VideoList from '../VideoList';
 import VideoDetail from '../VideoDetail';
+import video from '../VideoDetail';
 import 'semantic-ui-css/semantic.min.css';
+import { AuthUserContext, withAuthorization } from '../Session';
 
 
 
 class Landing extends React.Component{
   state={
     videos: [],
-    selectedVideo: null
+    selectedVideo: null,
   }
 /**assigned termFromSearchbar as we pass term from Searchber(this.prop.handleFormSubmit)
   we take the term from serachbar compoent and assign to q to that we need to pass handleSubmit 
@@ -52,6 +55,8 @@ class Landing extends React.Component{
     }
 }
 
+const condition = authUser => !!authUser;
+
 export default Landing;
  
 
@@ -71,10 +76,8 @@ export default Landing;
 
 
 /**import React, { Component } from 'react';
-
 const API = 'https://prod.mypod.online/feed?q=';
 const API_KEY = 'queen';
-
 class Landing extends Component {
   constructor(props) {
     super(props);
@@ -84,7 +87,6 @@ class Landing extends Component {
       error: null,
     };
   }
-
   componentDidMount() {
     fetch(API+API_KEY)
       .then(response => {
@@ -97,18 +99,14 @@ class Landing extends Component {
       .then(result => this.setState({ hits: result.hits, isLoading: false }))
       .catch(error => this.setState({ error, isLoading: false }));
   }
-
   render() {
     const { hits, isLoading, error } = this.state;
-
     if (error) {
       return <p>{error.message}</p>;
     }
-
     if (isLoading) {
       return <p>Loading ...</p>;
     }
-
     return (
       <ul>
         {hits.map(hit =>
@@ -120,8 +118,23 @@ class Landing extends Component {
     );
   }
 }
-
 export default Landing;
-
 */
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

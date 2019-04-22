@@ -44,6 +44,9 @@ const NavigationAuth = ({ authUser }) => (
      <li>
       <Link to={ROUTES.PROFILE_PAGE}>Profile</Link>
     </li>
+    <li>
+      <Link to={ROUTES.FAVOURITES_PAGE}>Favourites</Link>
+    </li>
   
     {!!authUser.roles[ROLES.ADMIN] && (
       <li>
