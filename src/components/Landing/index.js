@@ -9,7 +9,7 @@ import VideoList from '../VideoList';
 import VideoDetail from '../VideoDetail';
 import 'semantic-ui-css/semantic.min.css';
 import { AuthUserContext, withAuthorization } from '../Session';
-
+import logo from './micro.jpg';
 
 
 class Landing extends React.Component{
@@ -37,7 +37,13 @@ class Landing extends React.Component{
 
     render() {
         return (
+
+         
+
             <div style={{margin: '1em'}}>
+            <div> 
+        <img src={logo} alt="Logo" style={{ flex: 1, justifyContent: 'center', width: 1000, height: 800 }}></img>
+            </div>
                 <SearchBar handleFormSubmit={this.handleSubmit}/>
                 <div style={{margin: '1em'}} className='ui grid'>
                     <div className="ui row">
