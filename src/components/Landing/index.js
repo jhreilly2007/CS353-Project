@@ -7,7 +7,6 @@ import SearchBar from '../SearchBar';
 import youtube from '../../apis/youtube';
 import VideoList from '../VideoList';
 import VideoDetail from '../VideoDetail';
-import video from '../VideoDetail';
 import 'semantic-ui-css/semantic.min.css';
 import { AuthUserContext, withAuthorization } from '../Session';
 

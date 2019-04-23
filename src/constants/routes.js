@@ -16,4 +16,4 @@ export const ACCOUNT = '/account';
 export const ADMIN = '/admin';
 export const PASSWORD_FORGET = '/pw-forget';
 export const PROFILE_PAGE = '/profile';
-export const FAVOURITES_PAGE = '/favourites';
+export const SAVELINK_PAGE = '/savelinks';

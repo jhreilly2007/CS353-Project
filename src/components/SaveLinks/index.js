@@ -2,16 +2,18 @@ import React, { Component } from 'react';
 import { compose } from 'recompose';
 import { AuthUserContext, withAuthorization} from '../Session';
 import { withFirebase } from '../Firebase';
+import VideoDetail from '../VideoDetail';
 
-const FavouritesPage = () => (
+
+const SaveLinkPage = () => (
   <div>
     <h1>Add to Favourites</h1>
-    <Messages />
+      <Messages />
   </div>
 );
 
 class MessagesBase extends Component {
-   constructor(props) {
+  constructor(props) {
     super(props);
 
     this.state = {
@@ -22,7 +24,9 @@ class MessagesBase extends Component {
   }
 
   componentDidMount() {
-    this.setState({ loading: true });
+    this.setState({ 
+      loading: true 
+    });
 
     this.props.firebase.messages().on('value', snapshot => {
       const messageObject = snapshot.val();
@@ -31,22 +35,24 @@ class MessagesBase extends Component {
           const messageList = Object.keys(messageObject).map(key => ({
           ...messageObject[key],
           uid: key,
-        }));
+          }));
 
-        this.setState({ 
-             messages: messageList,
-             loading: false, 
-            });
+            this.setState({ 
+              messages: messageList,
+              loading: false, 
+              });
+      
       } else {
-        this.setState({ messages: null, loading: false });
-      }
+          this.setState({ messages: null, loading: false });
+        }
     });
   }
 
   componentWillUnmount() {
     this.props.firebase.messages().off();
   }
-    onChangeText = event => {
+
+  onChangeText = event => {
     this.setState({ text: event.target.value });
   };
 
@@ -63,29 +69,33 @@ class MessagesBase extends Component {
  
 
   render() {
-    const { text, messages, loading } = this.state;
+    const { 
+      text, 
+      messages, 
+      loading 
+    } = this.state;
 
     return (
-    <AuthUserContext.Consumer>
-    {authUser => (
-      <div>
-        <form onSubmit={event => this.onCreateMessage(event, authUser)}>
-          <input
-            type="text"
-            value={text}
-            onChange={this.onChangeText}
-          />
-          <button type="submit">Send</button>
-        </form>
-    <p> This is a temporary set up until we can figure how to click on video
-          to save to firebase automatically.<br /> For now user needs to copy and 
-          paste link from the bottom of Landing page..not ideal!! :( </p>
-      </div>
-      )}
+      <AuthUserContext.Consumer>
+        {authUser => (
+          <div>
+            <form onSubmit={event => this.onCreateMessage(event, authUser)}>
+              <input type="text" value={text} onChange={this.onChangeText}/>
+                <button type="submit">Send</button>
+            </form>
+    
+              <p> This is a temporary set up until we can figure how to click 
+                  on video to save to firebase automatically.<br /> For now user 
+                  needs to copy and paste link from the bottom of Landing page..
+                  not ideal!! :( 
+              </p>
+          </div>
+        )}
       </AuthUserContext.Consumer>
     );
   }
 }
+
 const MessageList = ({ messages }) => (
   <ul>
     {messages.map(message => (
@@ -97,13 +107,15 @@ const MessageList = ({ messages }) => (
 const MessageItem = ({ message }) => (
   <li>
     <strong>{message.userId}</strong>
-        <iframe id="video" src={message.text} 
-        allowFullScreen title='Placeholder'></iframe>;
-
+        
+      <iframe id="video" src={message.text} 
+          allowFullScreen title='Placeholder'>
+          </iframe>;
   </li>
 
 );
+
 const Messages = withFirebase(MessagesBase);
 const condition = authUser => !!authUser;
 
-export default compose(withAuthorization(condition),)(FavouritesPage);
+export default compose(withAuthorization(condition),)(SaveLinkPage);

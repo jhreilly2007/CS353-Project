@@ -4,6 +4,11 @@ import React, { Component } from 'react';
 
 const VideoDetail= ({video}) => {
 
+
+function saveValue() {
+  const textInput=videoSrc;
+}
+
     if (!video) {
         return <div className='ui embed'>
         <a id="play-video" href="#"></a><br />
@@ -11,8 +16,10 @@ const VideoDetail= ({video}) => {
         allowFullScreen title='Placeholder'></iframe></div>;      
     }
 
+    const testVariable="";
     const videoSrc = `https://www.youtube.com/embed/${video.id.videoId}`;
     console.log(typeof(video));
+
     return (
         <div>
             <div className='ui embed'>
@@ -20,13 +27,12 @@ const VideoDetail= ({video}) => {
             </div>
             <div className='ui segment'>
                 <h4 className='ui header'>{video.snippet.title}</h4>
-                <FaHeart value={videoSrc} style={{float:'right'}}/>
                 <p>{video.snippet.description}</p>
                 <p>Copy this Link to Add to Favourites:  <strong>{videoSrc}</strong></p>
-
-                </div>
             </div>
-
+            <input type="button" style={{float:'right'}} value={videoSrc} onClick={saveValue}/>
+        </div>
+       
     )
 
 }
