@@ -1,6 +1,7 @@
 import { FaHeart } from 'react-icons/fa';
 import 'semantic-ui-css/semantic.min.css';
 import React, { Component } from 'react';
+import logo from './Landing/micro.jpg';
 
 const VideoDetail= ({video}) => {
 
@@ -11,9 +12,7 @@ function saveValue() {
 
     if (!video) {
         return <div className='ui embed'>
-        <a id="play-video" href="#"></a><br />
-        <iframe id="video" src="https://www.youtube.com/embed/dcqrNXKv628" 
-        allowFullScreen title='Placeholder'></iframe></div>;      
+<img src={logo} alt="Logo" style={{ flex: 1, justifyContent: 'center', width: 1000, height: 600 }}></img></div>;      
     }
 
     const testVariable="";
