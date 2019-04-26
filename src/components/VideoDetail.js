@@ -12,7 +12,7 @@ function saveValue() {
 
     if (!video) {
         return <div className='ui embed'>
-<img src={logo} alt="Logo" style={{ flex: 1, justifyContent: 'center', width: 720, height: 400 }}></img></div>;      
+<img src={logo} alt="Logo" style={{ flex: 1, justifyContent: 'center', width: 710, height: 400 }}></img></div>;      
     }
 
     const testVariable="";
