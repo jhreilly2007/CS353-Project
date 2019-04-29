@@ -16,20 +16,16 @@ import PasswordChangeForm from '../PasswordChange';
 import { PasswordForgetForm } from '../PasswordForget';
 import { Panel, FormLabel} from 'react-bootstrap';
 import './profile.css';
-import logo from './micro.jpg';
+import logo from './musicalnote.png';
 
 
+
+//const ProfileTemplate
 
 const Profile = () => (
 
 
 <div className="containerprofile">
-
-
-<div className="logo">
-    <img src={logo} style={{ flex: 1, justifyContent: 'center', width: 700, height: 500 }} />
-</div>
-
 
 
 
@@ -44,61 +40,60 @@ const Profile = () => (
   
   
 
-  <div class="item2">
-  
-    <div class="card">
+    <div class="item2">
+        <div class="card">
 
-    <AuthUserContext.Consumer>
-            {authUser => (
-            
+            <div className="logo">
+              <img src={logo}  />
+            </div>
+
+            <AuthUserContext.Consumer>
+                {authUser => (
                 <h1>{authUser.firstname} {authUser.lastname}</h1>
+                   )}
+            </AuthUserContext.Consumer>
+
+            <p class="title"><AuthUserContext.Consumer>
+                {authUser => (
             
-            )}
-        </AuthUserContext.Consumer>
-
-      <p class="title"><AuthUserContext.Consumer>
-            {authUser => (
-            <div>
-            Username: {authUser.username}
-            <br></br>
-                Email: {authUser.email}
-            </div>
-            )}
-            </AuthUserContext.Consumer></p>
+                  <div>
+                      Username: {authUser.username}
+                      <br></br>
+                      Email: {authUser.email}
+                  </div>
+                     )}
+              </AuthUserContext.Consumer>
+            </p>
   
-      <p><AuthUserContext.Consumer>
-            {authUser => (
-            <div>
-                Something about me: {authUser.bio}
+            <p><AuthUserContext.Consumer>
+                {authUser => (
+                  <div>
+                    Something about me: {authUser.bio}
+                  </div>
+                    )}
+                  </AuthUserContext.Consumer>
+            </p>
+
+            <div class="border-spacing">
+                <div class="w3-card w3-round w3-white">
+                 <div class="xcontainer">
+                    <p contenteditable="true" class="w3-border w3-padding">Status: Feeling Blue</p>
+                  </div>
+                </div>
             </div>
-            )}
-        </AuthUserContext.Consumer></p>
 
-
+       </div>
     </div>
-
-  </div>
  
 
   <div class="item3">Social Media
 
-<div class="border-spacing">
-        
-          <div class="w3-card w3-round w3-white">
-            <div class="xcontainer">
-              
-              <p contenteditable="true" class="w3-border w3-padding">Status: Feeling Blue</p></div>
-              <button type="button" class="buttonpost"><i class="fa fa-pencil"></i>  Post</button> 
-            
-          </div>
-        
-      </div>
-  
+     
   </div>  
 
 
-  <div class="item4">Right</div>
-  <div class="item5">Social Media
+  <div class="item4">Friends</div>
+  <div class="item5">Messages
 
 
   
@@ -128,6 +123,24 @@ const Profile = () => (
 
     
 );  
+
+
+/**<form method="post" accept-charset="UTF-8">
+    
+    <input type="hidden" name="action" value="users/saveUser">
+    <input type="hidden" name="redirect" value="users/{{ currentUser.username }}">
+    <input type="hidden" name="userId" value="{{ currentUser.id }}">
+
+    <label for="location">Location</label>
+    <input type="text" id="location" name="fields[location]" value="{{ currentUser.location }}">
+
+    <label for="bio">Bio</label>
+    <textarea id="bio" name="fields[bio]">{{ currentUser.bio }}</textarea>
+
+    <input type="submit" value="Save Profile">
+</form>
+
+*/
 
 /**You can try it by signing out from your application and trying to access the 
 /account or /home routes. Both should redirect you to the /signin route. It should 
