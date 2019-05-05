@@ -19,7 +19,7 @@ const SignOutButton = ({ firebase }) => (
   				lineHeight: '1.4285em',
   				borderRadius:'5px'
 
-    			}} type="button" onClick={firebase.doSignOut}>Sign Out </button>
+    			}} type="button" id="button" onClick={firebase.doSignOut}>Sign Out </button>
 );
 
 export default withFirebase(SignOutButton);

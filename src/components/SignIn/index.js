@@ -82,10 +82,10 @@ class SignInFormBase extends Component {
       <form class="form-signup" onSubmit={this.onSubmit}>
       <h2 class="form-signup-heading">Please Sign In</h2>
 
-        <input type="text" className="form-control" placeholder="Email address" required
+        <input type="text" className="form-control" id="email" placeholder="Email address" required
                            autoFocus onChange={this.onChange}/>
 
-        <input type="password" className="form-control" placeholder="Password" required
+        <input type="password" className="form-control" id="password" placeholder="Password" required
                            onChange={this.onChange}/>
 
 

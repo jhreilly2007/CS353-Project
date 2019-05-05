@@ -1,0 +1,384 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LandingPage should render correctly in "debug" mode 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Landing
+    debug={true}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <SearchBar
+          handleFormSubmit={[Function]}
+        />,
+        <div
+          className="ui grid"
+          style={
+            Object {
+              "margin": "1em",
+            }
+          }
+        >
+          <div
+            className="ui row"
+          >
+            <div
+              className="eleven wide column"
+            >
+              <VideoDetail
+                video={null}
+              />
+            </div>
+            <div
+              className="five wide column"
+            >
+              <VideoList
+                handleVideoSelect={[Function]}
+                videos={Array []}
+              />
+            </div>
+          </div>
+        </div>,
+      ],
+      "style": Object {
+        "margin": "1em",
+      },
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "handleFormSubmit": [Function],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <div
+            className="ui row"
+          >
+            <div
+              className="eleven wide column"
+            >
+              <VideoDetail
+                video={null}
+              />
+            </div>
+            <div
+              className="five wide column"
+            >
+              <VideoList
+                handleVideoSelect={[Function]}
+                videos={Array []}
+              />
+            </div>
+          </div>,
+          "className": "ui grid",
+          "style": Object {
+            "margin": "1em",
+          },
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div
+                className="eleven wide column"
+              >
+                <VideoDetail
+                  video={null}
+                />
+              </div>,
+              <div
+                className="five wide column"
+              >
+                <VideoList
+                  handleVideoSelect={[Function]}
+                  videos={Array []}
+                />
+              </div>,
+            ],
+            "className": "ui row",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <VideoDetail
+                  video={null}
+                />,
+                "className": "eleven wide column",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "video": null,
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <VideoList
+                  handleVideoSelect={[Function]}
+                  videos={Array []}
+                />,
+                "className": "five wide column",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "handleVideoSelect": [Function],
+                  "videos": Array [],
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              "type": "div",
+            },
+          ],
+          "type": "div",
+        },
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <SearchBar
+            handleFormSubmit={[Function]}
+          />,
+          <div
+            className="ui grid"
+            style={
+              Object {
+                "margin": "1em",
+              }
+            }
+          >
+            <div
+              className="ui row"
+            >
+              <div
+                className="eleven wide column"
+              >
+                <VideoDetail
+                  video={null}
+                />
+              </div>
+              <div
+                className="five wide column"
+              >
+                <VideoList
+                  handleVideoSelect={[Function]}
+                  videos={Array []}
+                />
+              </div>
+            </div>
+          </div>,
+        ],
+        "style": Object {
+          "margin": "1em",
+        },
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "handleFormSubmit": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <div
+              className="ui row"
+            >
+              <div
+                className="eleven wide column"
+              >
+                <VideoDetail
+                  video={null}
+                />
+              </div>
+              <div
+                className="five wide column"
+              >
+                <VideoList
+                  handleVideoSelect={[Function]}
+                  videos={Array []}
+                />
+              </div>
+            </div>,
+            "className": "ui grid",
+            "style": Object {
+              "margin": "1em",
+            },
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <div
+                  className="eleven wide column"
+                >
+                  <VideoDetail
+                    video={null}
+                  />
+                </div>,
+                <div
+                  className="five wide column"
+                >
+                  <VideoList
+                    handleVideoSelect={[Function]}
+                    videos={Array []}
+                  />
+                </div>,
+              ],
+              "className": "ui row",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <VideoDetail
+                    video={null}
+                  />,
+                  "className": "eleven wide column",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "video": null,
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <VideoList
+                    handleVideoSelect={[Function]}
+                    videos={Array []}
+                  />,
+                  "className": "five wide column",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "handleVideoSelect": [Function],
+                    "videos": Array [],
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                "type": "div",
+              },
+            ],
+            "type": "div",
+          },
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+  Symbol(enzyme.__childContext__): null,
+}
+`;
