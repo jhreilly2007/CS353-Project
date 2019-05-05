@@ -59,6 +59,16 @@ you have to restructure them as lists (arrays), which makes it easier to display
         <p>
           The Admin Page is accessible by every signed in admin user.
         </p>
+        <p>
+        At the moment the Admin Page is only used to show future potential.
+        </p>
+        <p>
+        This is a list of all users that have signed up to our application. We could
+        use this feature to edit content, block users etc..
+        </p>
+        <p>
+        This section needs further development in later sprints
+        </p>
 
         {loading && <div>Loading ...</div>}
 

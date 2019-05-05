@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { compose } from 'recompose';
 import { AuthUserContext, withAuthorization} from '../Session';
 import { withFirebase } from '../Firebase';
-import VideoDetail from '../VideoDetail';
+//import VideoDetail from '../VideoDetail';
 
 
 const SaveLinkPage = () => (
@@ -70,9 +70,7 @@ class MessagesBase extends Component {
 
   render() {
     const { 
-      text, 
-      messages, 
-      loading 
+      text 
     } = this.state;
 
     return (

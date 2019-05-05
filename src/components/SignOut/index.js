@@ -5,7 +5,7 @@ passing functionality to a button in a React component is
 fairly straightforward.*/
 import React from 'react';
 import { withFirebase } from '../Firebase';
-import { Panel, FormLabel} from 'react-bootstrap';
+//import { Panel, FormLabel} from 'react-bootstrap';
 
 const SignOutButton = ({ firebase }) => (
   <button style={{background:'#d5e1df',

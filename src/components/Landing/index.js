@@ -8,7 +8,7 @@ import youtube from '../../apis/youtube';
 import VideoList from '../VideoList';
 import VideoDetail from '../VideoDetail';
 import 'semantic-ui-css/semantic.min.css';
-import { AuthUserContext, withAuthorization } from '../Session';
+//import { AuthUserContext, withAuthorization } from '../Session';
 
 
 class Landing extends React.Component{
@@ -56,7 +56,7 @@ class Landing extends React.Component{
     }
 }
 
-const condition = authUser => !!authUser;
+//const condition = authUser => !!authUser;
 
 export default Landing;
  

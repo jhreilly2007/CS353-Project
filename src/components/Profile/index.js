@@ -10,11 +10,11 @@
  and define the authUser authorization condition */
  
 
-import React, { Component } from 'react';
+import React from 'react';
 import { AuthUserContext, withAuthorization } from '../Session';
-import PasswordChangeForm from '../PasswordChange';
-import { PasswordForgetForm } from '../PasswordForget';
-import { Panel, FormLabel} from 'react-bootstrap';
+//import PasswordChangeForm from '../PasswordChange';
+//import { PasswordForgetForm } from '../PasswordForget';
+//import { Panel, FormLabel} from 'react-bootstrap';
 import './profile.css';
 import logo from './musicalnote.png';
 
@@ -44,7 +44,7 @@ const Profile = () => (
         <div class="card">
 
             <div className="logo">
-              <img src={logo}  />
+              <img src={logo} />
             </div>
 
             <AuthUserContext.Consumer>
